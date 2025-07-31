@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>F1 Gen2 - Reglajes</title>
+<style>
+:root {
+    --bg: #0a0a0a;
+    --card: #1a1a1a;
+    --accent: #00d4ff;
+    --text: #ffffff;
+    --text-dim: #888;
+    --border: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.4;
+    padding: 12px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+    background: linear-gradient(45deg, var(--accent), #7c3aed);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.circuit-nav {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.circuit-btn {
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 12px 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    text-align: center;
+    transition: all 0.2s;
+}
+
+.circuit-btn:hover, .circuit-btn.active {
+    background: var(--accent);
+    color: var(--bg);
+    border-color: var(--accent);
+}
+
+.circuit-content {
+    display: none;
+    background: var(--card);
+    border-radius: 12px;
+    padding: 16px;
+    border: 1px solid var(--border);
+}
+
+.circuit-content.active {
+    display: block;
+}
+
+.circuit-title {
+    color: var(--accent);
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+.circuit-desc {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+}
+
+.setup-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+    font-size: 0.85rem;
+}
+
+.setup-table th {
+    background: var(--accent);
+    color: var(--bg);
+    padding: 10px 8px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+.setup-table td {
+    padding: 10px 8px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+}
+
+.setup-table td:first-child {
+    color: var(--accent);
+    font-weight: 600;
+    width: 35%;
+}
+
+.setup-table td:nth-child(2) {
+    color: var(--text);
+    font-weight: 700;
+    width: 25%;
+}
+
+.setup-table td:last-child {
+    color: var(--text-dim);
+    width: 40%;
+    line-height: 1.3;
+}
+
+.intro {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border);
+    font-size: 0.9rem;
+    color: var(--text-dim);
+}
+
+@media (max-width: 480px) {
+    .circuit-nav {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .circuit-btn {
+        font-size: 0.8rem;
+        padding: 10px 6px;
+    }
+    
+    h1 {
+        font-size: 1.3rem;
+    }
+}
+</style>
+</head>
+<body>
+<h1>F1 Gen2 - Reglajes AMS2</h1>
+
+<div class="intro">
+    <strong>Guía de reglajes</strong> para Fórmula Ultimate Gen 2. Estos valores son puntos de partida - ajústalos según tu estilo y condiciones.
+</div>
+
+<div class="circuit-nav">
+    <button class="circuit-btn active" onclick="showCircuit('monza')">Monza</button>
+    <button class="circuit-btn" onclick="showCircuit('spa')">Spa</button>
+    <button class="circuit-btn" onclick="showCircuit('silverstone')">Silverstone</button>
+    <button class="circuit-btn" onclick="showCircuit('monaco')">Mónaco</button>
+    <button class="circuit-btn" onclick="showCircuit('austria')">Austria</button>
+    <button class="circuit-btn" onclick="showCircuit('montreal')">Montreal</button>
+    <button class="circuit-btn" onclick="showCircuit('imola')">Imola</button>
+    <button class="circuit-btn" onclick="showCircuit('interlagos')">Interlagos</button>
+</div>
+
+<div id="monza" class="circuit-content active">
+    <h2 class="circuit-title">Monza, Italia</h2>
+    <p class="circuit-desc">Templo de la velocidad. Prioridad: mínima resistencia aerodinámica.</p>
+    <table class="setup-table">
+        <tr><th>Parámetro</th><th>Valor</th><th>Notas</th></tr>
+        <tr><td>Bloqueo de dirección</td><td>Pendiente</td><td>Datos por proporcionar</td></tr>
+        <tr><td>Balance de frenado</td><td>Pendiente</td><td>Datos por proporcionar</td></tr>
+        <tr><td>Carga aerodinámica delantera</td><td>Pendiente</td><td>Datos por proporcionar</td></tr>
+        <tr><td>Carga aerodinámica trasera</td><td>Pendiente</td><td>Datos por proporcionar</td></tr>
+        <tr><td>Barra estabilizadora delantera</td><td>Pendiente</td><td>Datos por proporcionar</td></tr>
+        <tr><td>Barra estabilizadora trasera</td><td>Pendiente</td><td>Datos por proporcionar</td></tr>
+    </table>
+</div>
+
+<div id="spa" class="circuit-content">
+    <h2 class="circuit-title">Spa-Francorchamps, Bélgica</h2>
+    <p class="circuit-desc">Circuito de contrastes. Baja carga para rectas, apoyo para curvas rápidas.</p>
+    <table class="setup-table">
+        <tr><th>Parámetro</th><th>Valor</th><th>Notas</th></tr>
+        <tr><td>Bloqueo de dirección</td><td>Pendiente</td><td>Datos por proporcionar</td></tr>
+        <tr><td>Balance de frenado</td><td>Pendiente</td><td>Datos por proporcionar</td></tr>
+        <tr><td>Carga aerodinámica delantera</td><td>Pendiente</td><td>Datos por proporcionar</td></tr>
+        <tr><td>Carga aerodinámica trasera</td><td>Pendiente</td><td>Datos por proporcionar</td></tr>
+        <tr><td>Barra estabilizadora delantera</td><td>Pendiente</td><td>Datos por proporcionar</td></tr>
+        <tr><td>Barra estabilizadora trasera</td><td>Pendiente</td><td>Datos por proporcionar</td></tr>
+    </table>
+</div>
+
+<div id="silverstone" class="circuit-content">
+    <h2 class="circuit-title">Silverstone, Gran Bretaña</h2>
+    <p class="circuit-desc">Curvas rápidas enlazadas. Coche estable y reactivo en cambios de dirección.</p>
+    <table class="setup-table">
+        <tr><th>Parámetro</th><th>Valor</th><th>Notas</th></tr>
+        <tr><td>Bloqueo de dirección (grados)</td><td><strong>20°</strong></td><td>Valor intermedio: suficiente para las curvas rápidas y enlazadas.</td></tr>
+        <tr><td>Balance de frenado (Front/Rear)</td><td><strong>57% / 43%</strong></td><td>Ligeramente adelantado para estabilidad en frenadas fuertes (Copse, Brooklands).</td></tr>
+        <tr><td>Carga aerodinámica delantera</td><td><strong>24 / 48</strong></td><td>Carga media-baja, para buen paso por curvas rápidas como Maggots/Becketts.</td></tr>
+        <tr><td>Carga aerodinámica trasera</td><td><strong>28 / 48</strong></td><td>Un poco más alta para mantener estabilidad en aceleración.</td></tr>
+        <tr><td>Barra estabilizadora delantera</td><td><strong>36 / 48</strong></td><td>Moderadamente rígida para mejor respuesta en curvas rápidas.</td></tr>
+        <tr><td>Barra estabilizadora trasera</td><td><strong>30 / 48</strong></td><td>Un poco más blanda para evitar sobreviraje en la salida de curvas.</td></tr>
+    </table>
+</div>
+
+<div id="monaco" class="circuit-content">
+    <h2 class="circuit-title">Mónaco</h2>
+    <p class="circuit-desc">Circuito urbano. Prioridad: agarre mecánico y agilidad.</p>
+    <table class="setup-table">
+        <tr><th>Parámetro</th><th>Valor</th><th>Notas</th></tr>
+        <tr><td>Bloqueo de dirección</td><td>Pendiente</td><td>Datos por proporcionar</td></tr>
+        <tr><td>Balance de frenado</td><td>Pendiente</td><td>Datos por proporcionar</td></tr>
+        <tr><td>Carga aerodinámica delantera</td><td>Pendiente</td><td>Datos por proporcionar</td></tr>
+        <tr><td>Carga aerodinámica trasera</td><td>Pendiente</td><td>Datos por proporcionar</td></tr>
+        <tr><td>Barra estabilizadora delantera</td><td>Pendiente</td><td>Datos por proporcionar</td></tr>
+        <tr><td>Barra estabilizadora trasera</td><td>Pendiente</td><td>Datos por proporcionar</td></tr>
+    </table>
+</div>
+
+<div id="austria" class="circuit-content">
+    <h2 class="circuit-title">Red Bull Ring, Austria</h2>
+    <p class="circuit-desc">Circuito corto con rectas y curvas rápidas. Tracción y eficiencia aerodinámica.</p>
+    <table class="setup-table">
+        <tr><th>Parámetro</th><th>Valor</th><th>Notas</th></tr>
+        <tr><td>Bloqueo de dirección</td><td>Pendiente</td><td>Datos por proporcionar</td></tr>
+        <tr><td>Balance de frenado</td><td>Pendiente</td><td>Datos por proporcionar</td></tr>
+        <tr><td>Carga aerodinámica delantera</td><td>Pendiente</td><td>Datos por proporcionar</td></tr>
+        <tr><td>Carga aerodinámica trasera</td><td>Pendiente</td><td>Datos por proporcionar</td></tr>
+        <tr><td>Barra estabilizadora delantera</td><td>Pendiente</td><td>Datos por proporcionar</td></tr>
+        <tr><td>Barra estabilizadora trasera</td><td>Pendiente</td><td>Datos por proporcionar</td></tr>
+    </table>
+</div>
+
+<div id="montreal" class="circuit-content">
+    <h2 class="circuit-title">Montreal, Canadá</h2>
+    <p class="circuit-desc">Stop and Go. Rectas largas y chicanes lentas. Velocidad punta y tracción.</p>
+    <table class="setup-table">
+        <tr><th>Parámetro</th><th>Valor</th><th>Notas</th></tr>
+        <tr><td>Bloqueo de dirección</td><td>Pendiente</td><td>Datos por proporcionar</td></tr>
+        <tr><td>Balance de frenado</td><td>Pendiente</td><td>Datos por proporcionar</td></tr>
+        <tr><td>Carga aerodinámica delantera</td><td>Pendiente</td><td>Datos por proporcionar</td></tr>
+        <tr><td>Carga aerodinámica trasera</td><td>Pendiente</td><td>Datos por proporcionar</td></tr>
+        <tr><td>Barra estabilizadora delantera</td><td>Pendiente</td><td>Datos por proporcionar</td></tr>
+        <tr><td>Barra estabilizadora trasera</td><td>Pendiente</td><td>Datos por proporcionar</td></tr>
+    </table>
+</div>
+
+<div id="imola" class="circuit-content">
+    <h2 class="circuit-title">Imola, Italia</h2>
+    <p class="circuit-desc">Técnico y rápido con cambios de elevación. Coche reactivo y estable.</p>
+    <table class="setup-table">
+        <tr><th>Parámetro</th><th>Valor</th><th>Notas</th></tr>
+        <tr><td>Bloqueo de dirección</td><td>Pendiente</td><td>Datos por proporcionar</td></tr>
+        <tr><td>Balance de frenado</td><td>Pendiente</td><td>Datos por proporcionar</td></tr>
+        <tr><td>Carga aerodinámica delantera</td><td>Pendiente</td><td>Datos por proporcionar</td></tr>
+        <tr><td>Carga aerodinámica trasera</td><td>Pendiente</td><td>Datos por proporcionar</td></tr>
+        <tr><td>Barra estabilizadora delantera</td><td>Pendiente</td><td>Datos por proporcionar</td></tr>
+        <tr><td>Barra estabilizadora trasera</td><td>Pendiente</td><td>Datos por proporcionar</td></tr>
+    </table>
+</div>
+
+<div id="interlagos" class="circuit-content">
+    <h2 class="circuit-title">Interlagos, Brasil</h2>
+    <p class="circuit-desc">Anti-horario con recta en subida y sector 2 revirado. Altitud afecta rendimiento.</p>
+    <table class="setup-table">
+        <tr><th>Parámetro</th><th>Valor</th><th>Notas</th></tr>
+        <tr><td>Bloqueo de dirección</td><td>Pendiente</td><td>Datos por proporcionar</td></tr>
+        <tr><td>Balance de frenado</td><td>Pendiente</td><td>Datos por proporcionar</td></tr>
+        <tr><td>Carga aerodinámica delantera</td><td>Pendiente</td><td>Datos por proporcionar</td></tr>
+        <tr><td>Carga aerodinámica trasera</td><td>Pendiente</td><td>Datos por proporcionar</td></tr>
+        <tr><td>Barra estabilizadora delantera</td><td>Pendiente</td><td>Datos por proporcionar</td></tr>
+        <tr><td>Barra estabilizadora trasera</td><td>Pendiente</td><td>Datos por proporcionar</td></tr>
+    </table>
+</div>>Aerodinámica</div>
+            <div class="setup-value">Delantero: 5-8 | Trasero: 7-11. Carga baja como Monza pero con más estabilidad.</div>
+        </div>
+        <div class="setup-item">
+            <div class="setup-param">Suspensión</div>
+            <div class="setup-value">Blanda para atacar pianos agresivamente. Altura ligeramente elevada.</div>
+        </div>
+        <div class="setup-item">
+            <div class="setup-param">Tracción</div>
+            <div class="setup-value">Fundamental. Diferencial y suspensión trasera para salidas de curvas lentas.</div>
+        </div>
+        <div class="setup-item">
+            <div class="setup-param">Frenos</div>
+            <div class="setup-value">Muy exigente. Considerar refrigeración adicional.</div>
+        </div>
+    </div>
+</div>
+
+<div id="imola" class="circuit-content">
+    <h2 class="circuit-title">Imola, Italia</h2>
+    <p class="circuit-desc">Técnico y rápido con cambios de elevación. Coche reactivo y estable.</p>
+    <div class="setup-grid">
+        <div class="setup-item">
+            <div class="setup-param">Aerodinámica</div>
+            <div class="setup-value">Delantero: 10-14 | Trasero: 14-18. Carga media-alta para Piratella y Acque Minerali.</div>
+        </div>
+        <div class="setup-item">
+            <div class="setup-param">Suspensión</div>
+            <div class="setup-value">Rígida pero no excesiva. Permitir uso eficaz de pianos.</div>
+        </div>
+        <div class="setup-item">
+            <div class="setup-param">Respuesta</div>
+            <div class="setup-value">Agilidad en cambios de dirección. Barras estabilizadoras para chicanes rápidas.</div>
+        </div>
+        <div class="setup-item">
+            <div class="setup-param">Altura</div>
+            <div class="setup-value">Media. Balance entre aerodinámica y agresividad en pianos.</div>
+        </div>
+    </div>
+</div>
+
+<div id="interlagos" class="circuit-content">
+    <h2 class="circuit-title">Interlagos, Brasil</h2>
+    <p class="circuit-desc">Anti-horario con recta en subida y sector 2 revirado. Altitud afecta rendimiento.</p>
+    <div class="setup-grid">
+        <div class="setup-item">
+            <div class="setup-param">Aerodinámica</div>
+            <div class="setup-value">Delantero: 11-15 | Trasero: 16-21. Carga media-alta para sector 2 lento.</div>
+        </div>
+        <div class="setup-item">
+            <div class="setup-param">Suspensión</div>
+            <div class="setup-value">Equilibrada. Blanda para baches, estable para "S" de Senna.</div>
+        </div>
+        <div class="setup-item">
+            <div class="setup-param">Motor</div>
+            <div class="setup-value">Mapa más rico por altitud. Marchas para buena aceleración sector medio.</div>
+        </div>
+        <div class="setup-item">
+            <div class="setup-param">Tracción</div>
+            <div class="setup-value">Crucial para subida recta principal. Diferencial clave.</div>
+        </div>
+    </div>
+</div>
+
+<script>
+function showCircuit(circuitId) {
+    // Hide all content
+    document.querySelectorAll('.circuit-content').forEach(content => {
+        content.classList.remove('active');
+    });
+    
+    // Remove active from all buttons
+    document.querySelectorAll('.circuit-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    
+    // Show selected content
+    document.getElementById(circuitId).classList.add('active');
+    
+    // Add active to clicked button
+    event.target.classList.add('active');
+}
+</script>
+</body>
+</html>
